@@ -28,7 +28,7 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({ product }) => {
 
     return (
         <div className="bg-[#FAF6F0] dark:bg-[#1A0A10] text-slate-900 dark:text-slate-100 font-sans min-h-screen">
-            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-8 lg:pt-32 lg:pb-12">
                 {/* Hero Section */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
                     {/* Gallery */}
