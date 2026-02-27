@@ -27,13 +27,13 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({ product }) => {
     if (!product) return <div className="pt-32 text-center text-slate-500">Product profile not found...</div>;
 
     return (
-        <div className="bg-[#FAF6F0] dark:bg-[#1A0A10] text-slate-900 dark:text-slate-100 font-sans min-h-screen">
+        <div className="bg-[#FAF6F0]  text-slate-900  font-sans min-h-screen">
             <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-8 lg:pt-32 lg:pb-12">
                 {/* Hero Section */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
                     {/* Gallery */}
                     <div className="space-y-4">
-                        <div className="aspect-square rounded-2xl overflow-hidden bg-white dark:bg-black/20 border border-slate-200 dark:border-white/5 relative shadow-sm">
+                        <div className="aspect-square rounded-2xl overflow-hidden bg-white  border border-slate-200  relative shadow-sm">
                             <img
                                 className="w-full h-full object-contain p-8 md:p-12 transition-transform duration-700 hover:scale-105"
                                 alt={product.name}
@@ -68,19 +68,19 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({ product }) => {
                             <span className="text-[#C9922A]">{product.name}</span>
                         </nav>
 
-                        <h1 className="text-4xl lg:text-6xl font-serif font-black text-[#7B1C2E] dark:text-[#C9922A] mb-2 leading-tight">
+                        <h1 className="text-4xl lg:text-6xl font-serif font-black text-[#7B1C2E]  mb-2 leading-tight">
                             {product.name}
                         </h1>
                         <p className="text-lg text-slate-500 italic mb-8">{product.shortDesc}</p>
 
-                        <div className="flex items-center gap-6 mb-10 pb-10 border-b border-slate-200 dark:border-white/10">
+                        <div className="flex items-center gap-6 mb-10 pb-10 border-b border-slate-200 ">
                             <div>
-                                <span className="text-4xl font-black text-slate-900 dark:text-white">₹{product.price}</span>
+                                <span className="text-4xl font-black text-slate-900 ">₹{product.price}</span>
                                 {product.originalPrice && (
                                     <span className="ml-3 text-xl text-slate-400 line-through">₹{product.originalPrice}</span>
                                 )}
                             </div>
-                            <div className="h-10 w-px bg-slate-200 dark:bg-white/10"></div>
+                            <div className="h-10 w-px bg-slate-200 "></div>
                             <div className="flex flex-col">
                                 <div className="flex text-[#C9922A]">
                                     {[1, 2, 3, 4, 5].map(s => <span key={s} className="material-symbols-outlined fill-1 text-sm">star</span>)}
@@ -91,11 +91,11 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({ product }) => {
 
                         {/* Features Grid */}
                         {product.features && (
-                            <div className="grid grid-cols-2 gap-4 mb-10">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
                                 {product.features.map((feat: any, idx: number) => (
-                                    <div key={idx} className="flex items-center gap-3 p-4 bg-white dark:bg-white/5 rounded-2xl border border-slate-100 dark:border-transparent">
-                                        <span className="material-symbols-outlined text-[#7B1C2E] dark:text-[#C9922A] text-xl">{feat.icon}</span>
-                                        <span className="text-[10px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-widest">{feat.title}</span>
+                                    <div key={idx} className="flex items-center gap-3 p-4 bg-white  rounded-2xl border border-slate-100 ">
+                                        <span className="material-symbols-outlined text-[#7B1C2E]  text-xl">{feat.icon}</span>
+                                        <span className="text-[10px] font-bold text-slate-600  uppercase tracking-widest">{feat.title}</span>
                                     </div>
                                 ))}
                             </div>
@@ -103,7 +103,7 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({ product }) => {
 
                         <div className="space-y-8">
                             <div className="flex flex-col sm:flex-row gap-4">
-                                <div className="flex items-center border border-slate-200 dark:border-white/20 rounded-full px-2 py-1 bg-white dark:bg-transparent">
+                                <div className="flex items-center border border-slate-200  rounded-full px-2 py-1 bg-white ">
                                     <button
                                         onClick={() => handleQuantityChange('dec')}
                                         className="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-[#7B1C2E] transition-colors"
@@ -169,17 +169,17 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({ product }) => {
 
                 {/* Potent Botanicals Section */}
                 {product.botanicals && (
-                    <section className="py-20 mb-20 border-t border-slate-200 dark:border-white/10">
-                        <h2 className="text-3xl lg:text-5xl font-serif font-black text-center mb-16 text-[#7B1C2E] dark:text-[#C9922A]">
+                    <section className="py-20 mb-20 border-t border-slate-200 ">
+                        <h2 className="text-3xl lg:text-5xl font-serif font-black text-center mb-16 text-[#7B1C2E] ">
                             The Potent Botanicals
                         </h2>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                             {product.botanicals.map((botanical: any, idx: number) => (
                                 <div key={idx} className="group text-center">
-                                    <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-6 border-4 border-white dark:border-white/10 shadow-xl group-hover:scale-110 transition-transform duration-500">
+                                    <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-6 border-4 border-white  shadow-xl group-hover:scale-110 transition-transform duration-500">
                                         <img src={botanical.image} alt={botanical.name} className="w-full h-full object-cover" />
                                     </div>
-                                    <h3 className="text-xl font-black mb-3 text-slate-800 dark:text-white uppercase tracking-widest">{botanical.name}</h3>
+                                    <h3 className="text-xl font-black mb-3 text-slate-800  uppercase tracking-widest">{botanical.name}</h3>
                                     <p className="text-sm text-slate-500 leading-relaxed max-w-xs mx-auto">{botanical.desc}</p>
                                 </div>
                             ))}
@@ -189,10 +189,10 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({ product }) => {
 
                 {/* Ritual Section */}
                 {product.ritual && (
-                    <section className="bg-white dark:bg-white/5 rounded-[3rem] p-8 lg:p-16 mb-24 border border-slate-100 dark:border-white/5 shadow-sm">
+                    <section className="bg-white  rounded-[3rem] p-8 lg:p-16 mb-24 border border-slate-100  shadow-sm">
                         <div className="flex flex-col lg:flex-row gap-16 items-center">
                             <div className="lg:w-1/2">
-                                <h2 className="text-3xl lg:text-5xl font-serif font-black text-[#7B1C2E] dark:text-[#C9922A] mb-8">
+                                <h2 className="text-3xl lg:text-5xl font-serif font-black text-[#7B1C2E]  mb-8">
                                     The Daily Ritual
                                 </h2>
                                 <div className="space-y-10">
@@ -200,7 +200,7 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({ product }) => {
                                         <div key={idx} className="flex gap-6 items-start">
                                             <span className="text-5xl font-serif font-black text-[#C9922A] opacity-30 leading-none">0{idx + 1}</span>
                                             <div>
-                                                <h4 className="font-black mb-2 text-slate-800 dark:text-white uppercase tracking-widest">{step.title}</h4>
+                                                <h4 className="font-black mb-2 text-slate-800  uppercase tracking-widest">{step.title}</h4>
                                                 <p className="text-slate-500 text-sm leading-relaxed">{step.desc}</p>
                                             </div>
                                         </div>
@@ -226,10 +226,10 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({ product }) => {
             </main>
 
             {/* Sticky Mobile Add to Cart */}
-            <div className="lg:hidden fixed bottom-0 left-0 w-full bg-white dark:bg-[#1A0A10] border-t border-slate-100 dark:border-white/10 p-4 z-50 flex items-center justify-between shadow-2xl">
+            <div className="lg:hidden fixed bottom-0 left-0 w-full bg-white  border-t border-slate-100  p-4 z-50 flex items-center justify-between shadow-2xl">
                 <div className="flex flex-col">
                     <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Total Ritual</span>
-                    <span className="text-xl font-black text-[#7B1C2E] dark:text-[#C9922A]">₹{product.price}</span>
+                    <span className="text-xl font-black text-[#7B1C2E] ">₹{product.price}</span>
                 </div>
                 <button className="bg-[#7B1C2E] text-white px-8 py-3 rounded-full font-black uppercase text-xs tracking-widest shadow-lg active:scale-95 transition-transform">
                     Add to Cart

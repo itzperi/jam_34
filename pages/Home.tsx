@@ -34,12 +34,12 @@ const Home: React.FC = () => {
               </div>
 
               <h1 className="font-heading leading-[0.85] animate-reveal">
-                <span className="block text-brand-red text-6xl md:text-8xl lg:text-[7.5rem] font-bold tracking-tighter mb-2">ROYAL</span>
-                <span className="flex items-center gap-6">
-                  <span className="text-warm-gold italic text-7xl md:text-9xl lg:text-[9rem] font-heading leading-none">healing</span>
+                <span className="block text-brand-red text-5xl md:text-8xl lg:text-[7.5rem] font-bold tracking-tighter mb-2">ROYAL</span>
+                <span className="flex items-center gap-3 sm:gap-6">
+                  <span className="text-warm-gold italic text-5xl sm:text-7xl md:text-9xl lg:text-[9rem] font-heading leading-none">healing</span>
                   <span className="h-[2px] flex-grow bg-brand-red/10 hidden md:block"></span>
                 </span>
-                <span className="block text-brand-red text-6xl md:text-8xl lg:text-[7.5rem] font-bold tracking-tighter mt-2">DEFINED.</span>
+                <span className="block text-brand-red text-5xl md:text-8xl lg:text-[7.5rem] font-bold tracking-tighter mt-2">DEFINED.</span>
               </h1>
             </div>
 

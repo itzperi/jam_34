@@ -156,4 +156,9 @@ body {
   background-color: var(--color-background-light);
   font-family: var(--font-body);
   color: #1a150f;
+  overflow-x: hidden;
+  width: 100%;
+}
+html {
+  overflow-x: hidden;
 }

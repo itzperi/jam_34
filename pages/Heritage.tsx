@@ -6,7 +6,7 @@ const Heritage: React.FC = () => {
   return (
     <div className="bg-background-light text-forest transition-colors duration-300">
       <section className="relative w-full min-h-[600px] flex items-center justify-center bg-[#FAF6F0] overflow-hidden pt-20">
-        <div className="absolute inset-0 opacity-40 mix-blend-multiply bg-cover bg-center" style={{backgroundImage: `url('https://lh3.googleusercontent.com/aida-public/AB6AXuBob0v3KOCKbMvFHtXLw9B2tKq4_CYDNQwAV8drQEE3v5E9sfF8-Qrfk3NDGUKXydiRUy86maBoUjgP24ekZrCz4oU7cZ7UKGV5LhW5XfPSBEBgiR-R059b_Fjq2uihCGlRxb8A52sHR_PvvIFGy9CrNHsIgXHWLySWdJH74Seqbrk_DDSGntCSCiF9eQSCzXN32gam2_1lHDW3QsbVEmhRR-4cRRDl9fDUEIi6P3Po2BougJBbVoX-pha2Z6SkcaJEK39ZP8qo2q4')`}}></div>
+        <div className="absolute inset-0 opacity-40 mix-blend-multiply bg-cover bg-center" style={{ backgroundImage: `url('https://lh3.googleusercontent.com/aida-public/AB6AXuBob0v3KOCKbMvFHtXLw9B2tKq4_CYDNQwAV8drQEE3v5E9sfF8-Qrfk3NDGUKXydiRUy86maBoUjgP24ekZrCz4oU7cZ7UKGV5LhW5XfPSBEBgiR-R059b_Fjq2uihCGlRxb8A52sHR_PvvIFGy9CrNHsIgXHWLySWdJH74Seqbrk_DDSGntCSCiF9eQSCzXN32gam2_1lHDW3QsbVEmhRR-4cRRDl9fDUEIi6P3Po2BougJBbVoX-pha2Z6SkcaJEK39ZP8qo2q4')` }}></div>
         <div className="absolute inset-0 bg-gradient-to-t from-[#FAF6F0] via-[#FAF6F0]/60 to-transparent"></div>
         <div className="relative z-10 text-center px-4 max-w-4xl">
           <p className="text-primary font-bold tracking-widest uppercase text-sm mb-4">Est. 1890</p>
@@ -24,39 +24,39 @@ const Heritage: React.FC = () => {
       <section className="py-20">
         <div className="max-w-[960px] mx-auto px-4">
           <h2 className="font-serif text-4xl text-center mb-16 text-[#2E5339]">Our Journey Through Time</h2>
-          <div className="relative flex flex-col gap-0">
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-[#d0e7d6]"></div>
-            
-            <div className="relative grid grid-cols-2 gap-x-12 mb-20 items-center">
-              <div className="text-right">
-                <span className="text-3xl font-bold text-primary font-serif">1890</span>
+          <div className="relative flex flex-col gap-0 md:gap-0 pl-10 md:pl-0">
+            <div className="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-[#d0e7d6]"></div>
+
+            <div className="relative grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-x-12 mb-12 md:mb-20 items-center">
+              <div className="md:text-right order-1 md:order-1 mt-4 md:mt-0">
+                <span className="text-2xl md:text-3xl font-bold text-primary font-serif">1890</span>
               </div>
-              <div className="relative">
-                <div className="absolute -left-[54px] top-1/2 transform -translate-y-1/2 size-4 rounded-full bg-primary border-4 border-background-light"></div>
+              <div className="relative order-2 md:order-2">
+                <div className="absolute -left-[30px] md:-left-[54px] top-4 md:top-1/2 transform -translate-y-1/2 size-4 rounded-full bg-primary border-4 border-background-light"></div>
                 <h3 className="text-xl font-bold mb-2">Founding in Vijayanagaram</h3>
-                <p className="text-gray-600">Dr. Jammi Venkataramanayya begins his quest to modernize traditional healing practices.</p>
+                <p className="text-gray-600 text-sm md:text-base">Dr. Jammi Venkataramanayya begins his quest to modernize traditional healing practices.</p>
               </div>
             </div>
 
-            <div className="relative grid grid-cols-2 gap-x-12 mb-20 items-center">
-              <div className="order-2 pl-4">
-                <span className="text-3xl font-bold text-primary font-serif">1940</span>
+            <div className="relative grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-x-12 mb-12 md:mb-20 items-center">
+              <div className="md:order-2 md:pl-4 order-1 mt-4 md:mt-0">
+                <span className="text-2xl md:text-3xl font-bold text-primary font-serif">1940</span>
               </div>
-              <div className="relative order-1 text-right">
-                <div className="absolute -right-[54px] top-1/2 transform -translate-y-1/2 size-4 rounded-full bg-primary border-4 border-background-light"></div>
+              <div className="relative order-2 md:order-1 text-left md:text-right">
+                <div className="absolute -left-[30px] md:left-auto md:-right-[54px] top-4 md:top-1/2 transform -translate-y-1/2 size-4 rounded-full bg-primary border-4 border-background-light"></div>
                 <h3 className="text-xl font-bold mb-2">Tamil Nadu Govt Award</h3>
-                <p className="text-gray-600">Recognition for pioneering work in public health and standardized Ayurveda.</p>
+                <p className="text-gray-600 text-sm md:text-base">Recognition for pioneering work in public health and standardized Ayurveda.</p>
               </div>
             </div>
 
-            <div className="relative grid grid-cols-2 gap-x-12 mb-20 items-center">
-              <div className="text-right">
-                <span className="text-3xl font-bold text-primary font-serif">1990</span>
+            <div className="relative grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-x-12 mb-12 md:mb-20 items-center">
+              <div className="md:text-right order-1 md:order-1 mt-4 md:mt-0">
+                <span className="text-2xl md:text-3xl font-bold text-primary font-serif">1990</span>
               </div>
-              <div className="relative">
-                <div className="absolute -left-[54px] top-1/2 transform -translate-y-1/2 size-4 rounded-full bg-primary border-4 border-background-light"></div>
+              <div className="relative order-2 md:order-2">
+                <div className="absolute -left-[30px] md:-left-[54px] top-4 md:top-1/2 transform -translate-y-1/2 size-4 rounded-full bg-primary border-4 border-background-light"></div>
                 <h3 className="text-xl font-bold mb-2">IIT Collaborations</h3>
-                <p className="text-gray-600">Jammi partners with premier technical institutes to validate ancient molecules.</p>
+                <p className="text-gray-600 text-sm md:text-base">Jammi partners with premier technical institutes to validate ancient molecules.</p>
               </div>
             </div>
           </div>

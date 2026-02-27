@@ -72,7 +72,7 @@ const AyurvedaChatbot: React.FC = () => {
 
             {/* Chat Window */}
             {isOpen && (
-                <div className="absolute bottom-20 right-0 w-[400px] h-[600px] bg-white rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.15)] border border-warm-gold/10 flex flex-col overflow-hidden animate-fade-in-up">
+                <div className="absolute bottom-20 right-0 w-[calc(100vw-4rem)] sm:w-[400px] h-[500px] sm:h-[600px] bg-white rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.15)] border border-warm-gold/10 flex flex-col overflow-hidden animate-fade-in-up">
                     {/* Header */}
                     <div className="bg-brand-red p-6 text-white flex items-center gap-4">
                         <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center shadow-inner">

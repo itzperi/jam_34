@@ -5,51 +5,60 @@ type AdminView = 'dashboard' | 'inventory' | 'doctors' | 'addProduct-1' | 'addPr
 
 const Admin: React.FC = () => {
   const [view, setView] = useState<AdminView>('dashboard');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const renderSidebar = () => (
-    <aside className="w-64 bg-[#1A1A18] flex flex-col shrink-0 text-white fixed h-full z-20">
-      <div className="p-6 flex items-center gap-3">
-        <div className="bg-primary rounded-lg p-1.5 flex items-center justify-center">
-          <span className="material-symbols-outlined text-white font-bold">medical_services</span>
-        </div>
-        <div className="flex flex-col">
-          <h1 className="text-white text-sm font-bold leading-tight">Jammi Pharma</h1>
-          <p className="text-[#9c8649] text-[10px] uppercase tracking-widest font-semibold">Admin Panel</p>
-        </div>
-      </div>
-      <nav className="flex-1 px-4 py-4 space-y-1">
-        {[
-          { id: 'dashboard', label: 'Dashboard', icon: 'dashboard' },
-          { id: 'inventory', label: 'Inventory', icon: 'inventory_2' },
-          { id: 'doctors', label: 'Doctors & Moderation', icon: 'group' }
-        ].map((item) => (
-          <div 
-            key={item.id} 
-            onClick={() => setView(item.id as AdminView)}
-            className={`flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer transition-colors ${view.startsWith(item.id) ? 'bg-primary text-[#1A1A18] font-bold' : 'text-gray-400 hover:bg-white/5 hover:text-white'}`}
-          >
-            <span className={`material-symbols-outlined text-xl ${view.startsWith(item.id) ? 'fill-icon' : ''}`}>{item.icon}</span>
-            <p className="text-sm font-medium">{item.label}</p>
+    <>
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 bg-black/50 z-10 lg:hidden" onClick={() => setIsMobileMenuOpen(false)}></div>
+      )}
+      <aside className={`w-64 bg-[#1A1A18] flex flex-col shrink-0 text-white fixed h-full z-20 transition-transform duration-300 ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
+        <div className="p-6 flex items-center gap-3">
+          <div className="bg-primary rounded-lg p-1.5 flex items-center justify-center">
+            <span className="material-symbols-outlined text-white font-bold">medical_services</span>
           </div>
-        ))}
-      </nav>
-      <div className="p-4 border-t border-white/10 mt-auto">
-        <div className="flex items-center gap-3 p-2">
-          <div className="size-8 rounded-full bg-cover bg-center border border-white/20" style={{backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAGeb8UZcjdtSm_9wGKab0wTNuadguL8XkKSvfilD4WSYfrO_bxu_78mvdSi4EWVQMszfSeGSF3poUYqrZ_vhxbYMy4OMRajcFfOjPIfK5pPc115K28TXJYcYK2XMD_5qvWUzD_TYmlq-1zw9tE8HFvot5UYmruAhHK_hDgwEh61Injj_BzKJ1yw6EyFlLKP-MFwjO5W2GozRC-1rP7MU6UVCU9hhHb25S5Vd3hzKEQJXZZ2hNK1w_c2Cx4AUn03JMKM04rJWBmpq0')"}}></div>
-          <div className="flex-1 overflow-hidden">
-            <p className="text-white text-xs font-semibold truncate">Alex Jammi</p>
-            <p className="text-gray-500 text-[10px] truncate">Head Administrator</p>
+          <div className="flex flex-col">
+            <h1 className="text-white text-sm font-bold leading-tight">Jammi Pharma</h1>
+            <p className="text-[#9c8649] text-[10px] uppercase tracking-widest font-semibold">Admin Panel</p>
           </div>
         </div>
-      </div>
-    </aside>
+        <nav className="flex-1 px-4 py-4 space-y-1">
+          {[
+            { id: 'dashboard', label: 'Dashboard', icon: 'dashboard' },
+            { id: 'inventory', label: 'Inventory', icon: 'inventory_2' },
+            { id: 'doctors', label: 'Doctors & Moderation', icon: 'group' }
+          ].map((item) => (
+            <div
+              key={item.id}
+              onClick={() => { setView(item.id as AdminView); setIsMobileMenuOpen(false); }}
+              className={`flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer transition-colors ${view.startsWith(item.id) ? 'bg-primary text-[#1A1A18] font-bold' : 'text-gray-400 hover:bg-white/5 hover:text-white'}`}
+            >
+              <span className={`material-symbols-outlined text-xl ${view.startsWith(item.id) ? 'fill-icon' : ''}`}>{item.icon}</span>
+              <p className="text-sm font-medium">{item.label}</p>
+            </div>
+          ))}
+        </nav>
+        <div className="p-4 border-t border-white/10 mt-auto">
+          <div className="flex items-center gap-3 p-2">
+            <div className="size-8 rounded-full bg-cover bg-center border border-white/20" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAGeb8UZcjdtSm_9wGKab0wTNuadguL8XkKSvfilD4WSYfrO_bxu_78mvdSi4EWVQMszfSeGSF3poUYqrZ_vhxbYMy4OMRajcFfOjPIfK5pPc115K28TXJYcYK2XMD_5qvWUzD_TYmlq-1zw9tE8HFvot5UYmruAhHK_hDgwEh61Injj_BzKJ1yw6EyFlLKP-MFwjO5W2GozRC-1rP7MU6UVCU9hhHb25S5Vd3hzKEQJXZZ2hNK1w_c2Cx4AUn03JMKM04rJWBmpq0')" }}></div>
+            <div className="flex-1 overflow-hidden">
+              <p className="text-white text-xs font-semibold truncate">Alex Jammi</p>
+              <p className="text-gray-500 text-[10px] truncate">Head Administrator</p>
+            </div>
+          </div>
+        </div>
+      </aside >
+    </>
   );
 
   const renderDashboard = () => (
-    <div className="flex-1 flex flex-col min-h-screen bg-background-light">
-      <header className="flex items-center justify-between px-8 py-4 bg-white border-b border-gray-100 sticky top-0 z-10">
-        <h2 className="serif text-2xl font-bold">Dashboard Overview</h2>
-        <div className="flex items-center gap-4">
+    <div className="flex-1 flex flex-col min-h-screen bg-background-light w-full">
+      <header className="flex items-center justify-between px-4 lg:px-8 py-4 bg-white border-b border-gray-100 sticky top-0 z-10">
+        <div className="flex items-center gap-3">
+          <button onClick={() => setIsMobileMenuOpen(true)} className="lg:hidden p-2 -ml-2 text-gray-600 hover:bg-gray-100 rounded-lg"><span className="material-symbols-outlined">menu</span></button>
+          <h2 className="serif text-xl lg:text-2xl font-bold">Dashboard Overview</h2>
+        </div>
+        <div className="flex items-center gap-2 lg:gap-4">
           <button className="size-10 flex items-center justify-center rounded-lg bg-gray-50 text-gray-600 hover:bg-gray-100"><span className="material-symbols-outlined">notifications</span></button>
           <button className="size-10 flex items-center justify-center rounded-lg bg-gray-50 text-gray-600 hover:bg-gray-100"><span className="material-symbols-outlined">settings</span></button>
         </div>
@@ -104,10 +113,13 @@ const Admin: React.FC = () => {
   );
 
   const renderInventory = () => (
-    <div className="flex-1 flex flex-col min-h-screen bg-background-light">
-      <header className="flex items-center justify-between px-8 py-4 bg-white border-b border-gray-100 sticky top-0 z-10">
-        <h2 className="text-xl font-bold tracking-tight">Inventory Management</h2>
-        <button 
+    <div className="flex-1 flex flex-col min-h-screen bg-background-light w-full">
+      <header className="flex items-center justify-between px-4 lg:px-8 py-4 bg-white border-b border-gray-100 sticky top-0 z-10">
+        <div className="flex items-center gap-3">
+          <button onClick={() => setIsMobileMenuOpen(true)} className="lg:hidden p-2 -ml-2 text-gray-600 hover:bg-gray-100 rounded-lg"><span className="material-symbols-outlined">menu</span></button>
+          <h2 className="text-lg lg:text-xl font-bold tracking-tight">Inventory</h2>
+        </div>
+        <button
           onClick={() => setView('addProduct-1')}
           className="bg-primary text-background-dark px-5 py-2.5 rounded-xl font-bold text-sm flex items-center gap-2 hover:opacity-90 transition-all shadow-md shadow-primary/20"
         >
@@ -170,10 +182,13 @@ const Admin: React.FC = () => {
   );
 
   const renderModeration = () => (
-    <div className="flex-1 flex flex-col min-h-screen bg-background-light">
-      <header className="flex items-center justify-between px-10 py-3 bg-white border-b border-gray-100 sticky top-0 z-10">
-        <h2 className="text-lg font-bold">Jammi Internal Control</h2>
-        <div className="flex items-center gap-4">
+    <div className="flex-1 flex flex-col min-h-screen bg-background-light w-full">
+      <header className="flex items-center justify-between px-4 lg:px-10 py-3 bg-white border-b border-gray-100 sticky top-0 z-10">
+        <div className="flex items-center gap-3">
+          <button onClick={() => setIsMobileMenuOpen(true)} className="lg:hidden p-2 -ml-2 text-gray-600 hover:bg-gray-100 rounded-lg"><span className="material-symbols-outlined">menu</span></button>
+          <h2 className="text-base lg:text-lg font-bold">Jammi Control</h2>
+        </div>
+        <div className="flex items-center gap-2 lg:gap-4">
           <button className="size-10 bg-slate-100 rounded-lg flex items-center justify-center"><span className="material-symbols-outlined">notifications</span></button>
           <div className="size-10 rounded-full border-2 border-primary/20 bg-slate-200"></div>
         </div>
@@ -226,7 +241,7 @@ const Admin: React.FC = () => {
           <p className="font-bold">Step 1 of 3: Basic Info</p>
           <p className="text-primary font-bold text-sm">33% Complete</p>
         </div>
-        <div className="h-2 bg-slate-100 rounded-full overflow-hidden"><div className="h-full bg-primary" style={{width: '33%'}}></div></div>
+        <div className="h-2 bg-slate-100 rounded-full overflow-hidden"><div className="h-full bg-primary" style={{ width: '33%' }}></div></div>
       </div>
       <div className="bg-white rounded-xl border border-slate-200 p-8 space-y-6">
         <h2 className="text-2xl font-bold mb-6">1. Basic Information</h2>
@@ -250,7 +265,7 @@ const Admin: React.FC = () => {
           <p className="font-bold">Step 2 of 3: Media & Ingredients</p>
           <p className="text-primary font-bold text-sm">66% Complete</p>
         </div>
-        <div className="h-2 bg-slate-100 rounded-full overflow-hidden"><div className="h-full bg-primary" style={{width: '66%'}}></div></div>
+        <div className="h-2 bg-slate-100 rounded-full overflow-hidden"><div className="h-full bg-primary" style={{ width: '66%' }}></div></div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="bg-white rounded-xl border border-slate-200 p-8 flex flex-col gap-4">
@@ -264,12 +279,12 @@ const Admin: React.FC = () => {
         <div className="bg-white rounded-xl border border-slate-200 p-8 flex flex-col gap-4">
           <h3 className="text-xl font-bold">Key Ingredients</h3>
           <div className="space-y-3">
-             {['Tulsi (Holy Basil)', 'Ashwagandha', 'Saffron'].map(ing => (
-               <div key={ing} className="flex items-center justify-between p-4 bg-slate-50 rounded-xl border border-slate-100">
-                 <div className="flex items-center gap-3"><span className="material-symbols-outlined text-green-600">eco</span><span className="font-bold text-sm">{ing}</span></div>
-                 <button className="text-slate-400 hover:text-red-500"><span className="material-symbols-outlined">delete</span></button>
-               </div>
-             ))}
+            {['Tulsi (Holy Basil)', 'Ashwagandha', 'Saffron'].map(ing => (
+              <div key={ing} className="flex items-center justify-between p-4 bg-slate-50 rounded-xl border border-slate-100">
+                <div className="flex items-center gap-3"><span className="material-symbols-outlined text-green-600">eco</span><span className="font-bold text-sm">{ing}</span></div>
+                <button className="text-slate-400 hover:text-red-500"><span className="material-symbols-outlined">delete</span></button>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -287,7 +302,7 @@ const Admin: React.FC = () => {
           <p className="font-bold">Step 3 of 3: Inventory & Pricing</p>
           <p className="text-primary font-bold text-sm">100% Complete</p>
         </div>
-        <div className="h-2 bg-slate-100 rounded-full overflow-hidden"><div className="h-full bg-primary" style={{width: '100%'}}></div></div>
+        <div className="h-2 bg-slate-100 rounded-full overflow-hidden"><div className="h-full bg-primary" style={{ width: '100%' }}></div></div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="bg-white rounded-xl border border-slate-200 p-8 space-y-6">
@@ -317,9 +332,9 @@ const Admin: React.FC = () => {
   );
 
   return (
-    <div className="flex h-screen bg-background-light overflow-hidden">
+    <div className="flex h-screen bg-background-light overflow-hidden w-full">
       {renderSidebar()}
-      <div className="flex-1 ml-72 flex flex-col overflow-y-auto min-h-screen">
+      <div className="flex-1 lg:ml-64 flex flex-col overflow-y-auto min-h-screen w-full">
         {view === 'dashboard' && renderDashboard()}
         {view === 'inventory' && renderInventory()}
         {view === 'doctors' && renderModeration()}
